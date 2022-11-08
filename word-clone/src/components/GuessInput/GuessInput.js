@@ -1,5 +1,7 @@
 import React from "react";
 
+import { NUM_OF_CHARACTERS } from '../../constants';
+
 function GuessInput({ guesses, setGuesses }) {
   console.log("render");
   const [ inputText, setInputText ] = React.useState("");
@@ -21,14 +23,13 @@ function GuessInput({ guesses, setGuesses }) {
         id="guess-input"
         type="text"
         required
-        minLength={5}
-        maxLength={5}
-        pattern='\w{5}$'
+        minLength={NUM_OF_CHARACTERS}
+        maxLength={NUM_OF_CHARACTERS}
         value={inputText}
         onChange={handleChange}
       />
     </form>
   );
-}
+};
 
 export default GuessInput;
