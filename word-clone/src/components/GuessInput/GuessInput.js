@@ -2,8 +2,7 @@ import React from "react";
 
 import { NUM_OF_CHARACTERS } from '../../constants';
 
-function GuessInput({ guesses, setGuesses }) {
-  console.log("render");
+function GuessInput({ guesses, setGuesses, gameStatus }) {
   const [ inputText, setInputText ] = React.useState("");
 
   function handleChange(event) {
@@ -27,6 +26,7 @@ function GuessInput({ guesses, setGuesses }) {
         maxLength={NUM_OF_CHARACTERS}
         value={inputText}
         onChange={handleChange}
+        disabled={gameStatus !== "running"}
       />
     </form>
   );

@@ -31,9 +31,10 @@ body {
 }
 
 button {
-  margin: 0;
-  padding: 0;
-  border: none;
+  margin-top: 24px;
+  padding: 1em 1.5em;
+  border: solid 1px rgb(0 0 0 / 35%);
+  border-radius: 8px;
   background: transparent;
   cursor: pointer;
   text-align: left;

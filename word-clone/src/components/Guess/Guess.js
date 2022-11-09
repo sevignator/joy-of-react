@@ -1,19 +1,26 @@
 import React from "react";
 
 import { NUM_OF_CHARACTERS } from '../../constants';
-import { range } from '../../utils';
+import { range } from "../../utils";
 
-function Guess({ word }) {
+function Cell({ status, letter }) {
+  return (
+    <span className={`cell ${status}`}>
+      {letter}
+    </span>
+  );
+}
+
+function Guess({ result }) {
   return (
     <p className="guess">
       {range(NUM_OF_CHARACTERS).map((index) => {
         return (
-          <span
+          <Cell
             key={index}
-            className="cell"
-          >
-            {word && word[ index ]}
-          </span>
+            status={result?.[ index ].status}
+            letter={result?.[ index ].letter}
+          />
         );
       })}
     </p>
